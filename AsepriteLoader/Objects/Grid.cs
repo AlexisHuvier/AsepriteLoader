@@ -4,8 +4,8 @@ public class Grid
 {
     public readonly short X;
     public readonly short Y;
-    public readonly uint Width;
-    public readonly uint Height;
+    public readonly ushort Width;
+    public readonly ushort Height;
     
     public Grid(BinaryReader stream)
     {

@@ -5,17 +5,17 @@ namespace AsepriteLoader.Objects;
 public class Header
 {
     public readonly uint FileSize;
-    public readonly uint Frames;
-    public readonly uint Width;
-    public readonly uint Height;
+    public readonly ushort Frames;
+    public readonly ushort Width;
+    public readonly ushort Height;
     public readonly ColorDepth ColorDepth;
     public readonly bool LayerOpacityValid;
 
     [Obsolete("Use the frame duration field from each frame header")]
-    public readonly uint Speed;
+    public readonly ushort Speed;
 
     public readonly byte PaletteEntry;
-    public readonly uint NumberColors;
+    public readonly ushort ColorNumber;
     public readonly byte PixelWidth;
     public readonly byte PixelHeight;
     public readonly float PixelRatio;
@@ -35,7 +35,7 @@ public class Header
         stream.ReadUInt32(); // WILL BE SET TO 0
         PaletteEntry = stream.ReadByte();
         stream.ReadBytes(3); // IGNORED
-        NumberColors = stream.ReadUInt16();
+        ColorNumber = stream.ReadUInt16();
         PixelWidth = stream.ReadByte();
         PixelHeight = stream.ReadByte();
         if (PixelWidth == 0 || PixelHeight == 0)
