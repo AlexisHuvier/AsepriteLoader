@@ -1,4 +1,6 @@
-﻿namespace AsepriteLoader.Header;
+﻿using AsepriteLoader.Utils;
+
+namespace AsepriteLoader.Objects;
 
 public class Header
 {

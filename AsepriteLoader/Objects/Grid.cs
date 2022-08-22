@@ -1,4 +1,4 @@
-﻿namespace AsepriteLoader.Header;
+﻿namespace AsepriteLoader.Objects;
 
 public class Grid
 {
