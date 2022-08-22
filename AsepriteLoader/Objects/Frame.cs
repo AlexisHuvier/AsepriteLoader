@@ -5,6 +5,7 @@ public class Frame
     public readonly uint Size;
     public readonly uint ChunkNumber;
     public readonly ushort Duration;
+    public readonly List<Chunk> Chunks;
 
     public Frame(BinaryReader stream)
     {
@@ -15,5 +16,7 @@ public class Frame
         stream.ReadBytes(2); // FOR FUTURE
         var newChunkNumber = stream.ReadUInt32();
         ChunkNumber = newChunkNumber == 0 ? oldChunkNumber : newChunkNumber;
+        Chunks = new List<Chunk>();
+        Chunks.Add(new Chunk(stream));
     }
 }

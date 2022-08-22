@@ -29,6 +29,13 @@ namespace AsepriteLoaderExample // Note: actual namespace depends on the project
                 Console.WriteLine($"Size : {frame.Size}");
                 Console.WriteLine($"Number of Chunks : {frame.ChunkNumber}");
                 Console.WriteLine($"Duration : {frame.Duration}");
+                foreach (var chunk in frame.Chunks)
+                {
+                    Console.WriteLine($"-- Chunk {frame.Chunks.IndexOf(chunk)+1} / {frame.Chunks.Count}");
+                    Console.WriteLine($"Size : {chunk.Size}");
+                    Console.WriteLine($"Type : {chunk.Type}");
+                }
+            }
             Console.WriteLine("====================================");
         }
     }
