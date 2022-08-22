@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsepriteLoader", "AsepriteLoader\AsepriteLoader.csproj", "{3F278AD8-C9E3-43D5-B43E-A5EBD80F0024}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsepriteLoaderExample", "AsepriteLoaderExample\AsepriteLoaderExample.csproj", "{8CED4EB6-CA62-4DDD-97E9-A6D6876FAF57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F278AD8-C9E3-43D5-B43E-A5EBD80F0024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F278AD8-C9E3-43D5-B43E-A5EBD80F0024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F278AD8-C9E3-43D5-B43E-A5EBD80F0024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F278AD8-C9E3-43D5-B43E-A5EBD80F0024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CED4EB6-CA62-4DDD-97E9-A6D6876FAF57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CED4EB6-CA62-4DDD-97E9-A6D6876FAF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CED4EB6-CA62-4DDD-97E9-A6D6876FAF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CED4EB6-CA62-4DDD-97E9-A6D6876FAF57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
