@@ -14,4 +14,6 @@ public class Grid
         Width = stream.ReadUInt16();
         Height = stream.ReadUInt16();
     }
+
+    public override string ToString() => $"Grid :\n - Position : X = {X} / Y = {Y}\n - Size : {Width}x{Height}";
 }

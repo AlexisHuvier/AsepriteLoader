@@ -1,11 +1,11 @@
-﻿using AsepriteLoader.Utils;
+﻿using AsepriteLoader.Utils.Enums;
 
 namespace AsepriteLoader.Objects;
 
 public class Header
 {
     public readonly uint FileSize;
-    public readonly ushort Frames;
+    public readonly ushort FrameNumber;
     public readonly ushort Width;
     public readonly ushort Height;
     public readonly ColorDepth ColorDepth;
@@ -25,7 +25,7 @@ public class Header
     {
         FileSize = stream.ReadUInt32();
         stream.ReadUInt16(); // MAGIC NUMBER
-        Frames = stream.ReadUInt16();
+        FrameNumber = stream.ReadUInt16();
         Width = stream.ReadUInt16();
         Height = stream.ReadUInt16();
         ColorDepth = (ColorDepth)stream.ReadUInt16();
@@ -45,4 +45,10 @@ public class Header
         Grid = new Grid(stream);
         stream.ReadBytes(84); // FOR FUTURE
     }
+
+    public override string ToString() => 
+        $"Header :\n - File Size : {FileSize} o\n - Frame Number : {FrameNumber}\n - Size : {Width}x{Height}\n" +
+        $" - Color Depth : {ColorDepth}\n - Layer Opacity is Valid : {LayerOpacityValid}\n - Speed : {Speed}\n" +
+        $" - Palette Entry : {PaletteEntry}\n - Color Number : {ColorNumber}\n - Pixel Size : {PixelWidth}x{PixelHeight}\n" +
+        $" - Pixel Ratio : {PixelRatio}\n - " + Grid.ToString().Replace("\n", "\n ");
 }

@@ -7,7 +7,7 @@ public class Frame
     public readonly ushort Duration;
     public readonly List<Chunk> Chunks;
 
-    public Frame(BinaryReader stream)
+    public Frame(AsepriteFile file, BinaryReader stream)
     {
         Size = stream.ReadUInt32();
         stream.ReadUInt16(); // MAGIC NUMBER
@@ -17,6 +17,11 @@ public class Frame
         var newChunkNumber = stream.ReadUInt32();
         ChunkNumber = newChunkNumber == 0 ? oldChunkNumber : newChunkNumber;
         Chunks = new List<Chunk>();
-        Chunks.Add(new Chunk(stream));
+        for (var i = 0; i < ChunkNumber; i++)
+            Chunks.Add(new Chunk(file, stream));
     }
+
+    public override string ToString() =>
+        $"Frame :\n - Size : {Size}\n - Duration : {Duration}\n - Chunks ({ChunkNumber}) : \n  - " +
+        string.Join("\n - ", Chunks).Replace("\n", "\n ");
 }

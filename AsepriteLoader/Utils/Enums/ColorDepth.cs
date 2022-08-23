@@ -1,4 +1,4 @@
-﻿namespace AsepriteLoader.Utils;
+﻿namespace AsepriteLoader.Utils.Enums;
 
 public enum ColorDepth
 {

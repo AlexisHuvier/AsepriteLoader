@@ -10,8 +10,21 @@ public class AsepriteFile
     public AsepriteFile(string path) : this(new BinaryReader(new FileStream(path, FileMode.Open))) {}
     public AsepriteFile(BinaryReader stream)
     {
-        Header = new Header(stream);
-        Frames = new List<Frame>();
-        Frames.Add(new Frame(stream));
+        try
+        {
+            Header = new Header(stream);
+            Frames = new List<Frame>();
+            for (var i = 0; i < Header.FrameNumber; i++)
+                Frames.Add(new Frame(this, stream));
+        }
+        catch (EndOfStreamException)
+        {
+            Console.WriteLine(this);
+            throw;
+        }
     }
+
+    public override string ToString() => 
+        $"AsepriteFile :\n - " + Header.ToString().Replace("\n", "\n ") + 
+        $"\n - Frames ({Header.FrameNumber}) : \n  - " + string.Join("\n - ", Frames).Replace("\n", "\n ");
 }
